@@ -1,0 +1,65 @@
+baseURL = 'https://blog.sirfredrick.com/'
+languageCode = 'en-us'
+title = "Sirfredrick's Blog"
+theme = 'accessible-minimalism'
+disableHugoGeneratorInject = true
+enableRobotsTXT = true
+defaultContentLanguage = 'en'
+emailText ="Email me"
+
+[languages]
+  [languages.en]
+	title = "Sirfredrick's Blog"
+	weight = 1
+	[languages.en.menu]
+[[languages.en.menu.main]]
+  name = 'Home'
+  url = '/'
+  weight = 1
+[[languages.en.menu.main]]
+  name = 'Posts'
+  url = '/posts'
+  weight = 2
+  [languages.es]
+  	languagedirection = 'es'
+	contentDir = 'content/entradas'
+	title = "Blog de Señorfredrico"
+	weight = 2
+	[languages.es.menu]
+[[languages.es.menu.main]]
+  name = 'Home'
+  url = '/es'
+  weight = 1
+[[languages.es.menu.main]]
+  name = 'Entradas'
+  url = '/es/entradas'
+  weight = 2
+
+[params]
+    author = "Sirfredrick"
+    email = "sirfredrick@vivaldi.net"
+    rssText = "RSS feed"
+    
+    [[params.socials]]
+      url = "https://elekk.xyz/@sirfredrick"
+      text = "Mastodon"
+    [[params.socials]]
+      url = "https://www.youtube.com/channel/UCaJexSnGso1ieEmxOZFH4qw"
+      text = "YouTube"
+    [[params.socials]]
+      url = "https://github.com/sirfredrick"
+      text = "GitHub"
+
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true

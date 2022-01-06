@@ -1,0 +1,3 @@
+{{ if .IsNamedParams }}
+<p><img src="{{ .Get "src" }}" alt="{{ .Get "alt" }}" {{ if not (eq (.Get "width") "")}}width="{{ .Get "width" }}"{{ end }}></img></p>
+{{ end }}
