@@ -5,7 +5,6 @@ theme = 'accessible-minimalism'
 disableHugoGeneratorInject = true
 enableRobotsTXT = true
 defaultContentLanguage = 'en'
-emailText ="Email me"
 
 [languages]
   [languages.en]
@@ -37,7 +36,6 @@ emailText ="Email me"
 
 [params]
     author = "Sirfredrick"
-    email = "sirfredrick@vivaldi.net"
     rssText = "RSS feed"
     
     [[params.socials]]
