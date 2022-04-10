@@ -30,30 +30,44 @@ then
 	return 1
 fi
 
-# https://www.lcdf.org/gifsicle/
+sflag=
+while getopts s opt
+do
+	case $opt in
+		s) sflag=1
+			;;
+	esac
+done
 
-gifsicle -i static/*.gif --optimize=3 -o static/*.gif 
-gifsicle -i static/posts/*/*.gif --optimize=3 -o static/posts/*/*.gif 
-gifsicle -i static/es/*.gif --optimize=3 -o static/es/*.gif 
-gifsicle -i static/entradas/*/*.gif --optimize=3 -o static/entradas/*/*.gif 
+# skip image compression
+if [ -z "$sflag" ];
+then	
+	# https://www.lcdf.org/gifsicle/
+	
+	gifsicle -i static/*.gif --optimize=3 -o static/*.gif 
+	gifsicle -i static/posts/*/*.gif --optimize=3 -o static/posts/*/*.gif 
+	gifsicle -i static/es/*.gif --optimize=3 -o static/es/*.gif 
+	gifsicle -i static/entradas/*/*.gif --optimize=3 -o static/entradas/*/*.gif 	
+	
+	# https://github.com/tjko/jpegoptim
+	
+	jpegoptim -m 90 static/*.jpg
+	jpegoptim -m 90 static/*.jpeg
+	jpegoptim -m 90 static/posts/*/*.jpg
+	jpegoptim -m 90 static/posts/*/*.jpeg
+	jpegoptim -m 90 static/es/*.jpg
+	jpegoptim -m 90 static/es/*.jpeg
+	jpegoptim -m 90 static/entradas/*/*.jpg
+	jpegoptim -m 90 static/entradas/*/*.jpeg
+	
+	# https://github.com/fhanau/Efficient-Compression-Tool
+	
+	ect -6 static/*.png
+	ect -6 static/posts/*/*.png
+	ect -6 static/es/*.png
+	ect -6 static/es/entradas/*/*.png
 
-# https://github.com/tjko/jpegoptim
-
-jpegoptim -m 90 static/*.jpg
-jpegoptim -m 90 static/*.jpeg
-jpegoptim -m 90 static/posts/*/*.jpg
-jpegoptim -m 90 static/posts/*/*.jpeg
-jpegoptim -m 90 static/es/*.jpg
-jpegoptim -m 90 static/es/*.jpeg
-jpegoptim -m 90 static/entradas/*/*.jpg
-jpegoptim -m 90 static/entradas/*/*.jpeg
-
-# https://github.com/fhanau/Efficient-Compression-Tool
-
-ect -6 static/*.png
-ect -6 static/posts/*/*.png
-ect -6 static/es/*.png
-ect -6 static/es/entradas/*/*.png
+fi
 
 # https://git.sr.ht/~sircmpwn/openring
 
