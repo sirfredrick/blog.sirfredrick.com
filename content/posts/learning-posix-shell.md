@@ -12,7 +12,7 @@ scripting.
 When I first started out using Linux I excitedly "distro-hopped" in virtual
 machines to try and find what flavor I liked best. As I result of this, I tried
 a FreeBSD virtual machine and was surprised with how much software was
-available. I also discovered that common utilies like `grep` and `sed` didn't
+available. I also discovered that common utilities like `grep` and `sed` didn't
 have all the features of their GNU counterparts. From then on I knew I had to
 work on learning POSIX shell and to shun any bashisms. 
 
