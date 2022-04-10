@@ -1,17 +1,19 @@
-<p><a name="nav-menu" id="nav-menu"><strong>{{ i18n "siteMenu" }}</strong></a></p>
+<nav>
+  <h3 id="nav-menu">{{ i18n "siteMenu" }}</h3>
 
-<ul>
-    {{ range .Site.Menus.main }}
-    <li>
-      <a href="{{ .URL }}">
-      {{ $text := print .Name | safeHTML }}
-      {{ $text }}
-      </a>
-    </li>
-    {{ end }}
-</ul>
+  <ul>
+     {{ range .Site.Menus.main }}
+     <li>
+       <a href="{{ .URL }}">
+       {{ $text := print .Name | safeHTML }}
+       {{ $text }}
+       </a>
+     </li>
+     {{ end }}
+  </ul>
 
-<p><a href="#">{{ i18n "toTop" }}</a></p>
+  <p><a href="#">{{ i18n "toTop" }}</a></p>
+</nav>
 
 <p>
 {{ if isset .Site.Params "email" }}
