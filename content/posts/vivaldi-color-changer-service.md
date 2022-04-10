@@ -19,7 +19,7 @@ Gigabyte, I set out to plan how I would combine Vivaldi's customizability with
 
 ## General Plan
 
-![Animated diagram of the program](/posts/vivaldi-color-changer-service/diagram.apng)
+![Animated diagram of the program](/posts/vivaldi-color-changer-service/diagram.gif)
 
 The general idea is that a Vivaldi JavaScript mod would grab the color in
 hexadecimal and push it to a service called [PubNub](https://www.pubnub.com/). PubNub is a network that
