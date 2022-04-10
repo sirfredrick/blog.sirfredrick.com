@@ -4,7 +4,7 @@ date: 2022-04-03T18:45:10-07:00
 draft: false
 ---
 
-Being new to the Linux (and for that matter BSD, other POSIX OS) scene I had
+Being new to the Linux (and for that matter BSD/other POSIX OS) scene I had
 never really gotten a chance to learn shell scripting. I've been using Linux
 since summer 2020 and I've quickly understood the need for POSIX shell
 scripting. 
@@ -27,7 +27,7 @@ or on a walk while maximizing its learning potential.
 There have been various projects that condense audio of videos based on their
 subtitle files. One of them [substudy](https://github.com/emk/subtitles-rs/blob/master/substudy/README.md) 
 had a bug in it that prevented the majority of YouTube subtitle files from
-working. Naturally as the FOSS advocate that I am, I sent in a pull request to
+working. Naturally, as the FOSS advocate that I am, I sent in a pull request to
 fix this. Sadly, it seems like the project is unmaintained. However, this
 provided me with the perfect learning opportunity. 
 
@@ -35,11 +35,11 @@ provided me with the perfect learning opportunity.
 
 I set out to study what was allowed via the POSIX shell script standard.
 [shellhaters](https://shellhaters.org) provides a convient way to reference this
-standard. One of the vital lessons I learned is that the common shell utilies
+standard. One of the vital lessons I learned is that the common shell utilities
 that are provided are part of the standard and as such any call to them requires
 special attention. For my particular project I learned early on that
-`[[::digit::]]` would be required to parse time stamps in `sed`. Additionally,
-`[[::digit:]]` would have to be repeated multiple times to accurately parse
+`[[:digit:]]` would be required to parse time stamps in `sed`. Additionally,
+`[[:digit:]]` would have to be repeated multiple times to accurately parse
 timestamps. 
 
 For example see this painful snippet:
