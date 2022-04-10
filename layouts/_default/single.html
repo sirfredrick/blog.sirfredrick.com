@@ -43,4 +43,8 @@
 {{ end }}
 </article>
 
+{{ if eq .Language.Lang "en" }}
+  {{- partial "openring.html" . -}}
+{{ end }}
+
 {{ end }}
