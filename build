@@ -1,0 +1,71 @@
+#!/bin/sh
+
+if [ ! $(command -v hugo) ];
+then
+	printf "Error: hugo not found in path\n"
+	return 1
+fi
+
+if [ ! $(command -v openring) ];
+then
+	printf "Error: openring not found in path\n"
+	return 1
+fi
+
+if [ ! $(command -v gifsicle) ];
+then
+	printf "Error: gifsicle not found in path\n"
+	return 1
+fi
+
+if [ ! $(command -v jpegoptim) ];
+then
+	printf "Error: jpegoptim not found in path\n"
+	return 1
+fi
+
+if [ ! $(command -v ect) ];
+then
+	printf "Error: ect not found in path\n"
+	return 1
+fi
+
+# https://www.lcdf.org/gifsicle/
+
+gifsicle -i static/*.gif --optimize=3 -o static/*.gif 
+gifsicle -i static/posts/*/*.gif --optimize=3 -o static/posts/*/*.gif 
+gifsicle -i static/es/*.gif --optimize=3 -o static/es/*.gif 
+gifsicle -i static/entradas/*/*.gif --optimize=3 -o static/entradas/*/*.gif 
+
+# https://github.com/tjko/jpegoptim
+
+jpegoptim -m 90 static/*.jpg
+jpegoptim -m 90 static/*.jpeg
+jpegoptim -m 90 static/posts/*/*.jpg
+jpegoptim -m 90 static/posts/*/*.jpeg
+jpegoptim -m 90 static/es/*.jpg
+jpegoptim -m 90 static/es/*.jpeg
+jpegoptim -m 90 static/entradas/*/*.jpg
+jpegoptim -m 90 static/entradas/*/*.jpeg
+
+# https://github.com/fhanau/Efficient-Compression-Tool
+
+ect -6 static/*.png
+ect -6 static/posts/*/*.png
+ect -6 static/es/*.png
+ect -6 static/es/entradas/*/*.png
+
+# https://git.sr.ht/~sircmpwn/openring
+
+openring \
+	-s https://drewdevault.com/feed.xml \
+	-s https://melonds.kuribo64.net/rss.php \
+	-s https://dolphin-emu.org/blog/feeds/ \
+	-s https://emucross.com/rss/ \
+	-s https://yuzu-emu.org/index.xml \
+	< openring-in.html \
+	> ./layouts/partials/openring.html
+
+# https://gohugo.io
+
+hugo
