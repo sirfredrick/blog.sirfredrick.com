@@ -1,4 +1,5 @@
 {{ define "main" }}
+<article>
 <h1>{{ .Title }}</h1>
 
 {{ if ne .Params.Type "page" }}
@@ -40,6 +41,6 @@
   </ul>
 
 {{ end }}
-
+</article>
 
 {{ end }}
