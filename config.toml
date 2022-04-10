@@ -1,7 +1,6 @@
 baseURL = 'https://blog.sirfredrick.com/'
 languageCode = 'en-us'
 title = "Sirfredrick's Blog"
-theme = 'accessible-minimalism'
 disableHugoGeneratorInject = true
 enableRobotsTXT = true
 defaultContentLanguage = 'en'

@@ -1,0 +1,30 @@
+<p><a name="nav-menu" id="nav-menu"><strong>{{ i18n "siteMenu" }}</strong></a></p>
+
+<ul>
+    {{ range .Site.Menus.main }}
+    <li>
+      <a href="{{ .URL }}">
+      {{ $text := print .Name | safeHTML }}
+      {{ $text }}
+      </a>
+    </li>
+    {{ end }}
+</ul>
+
+<p><a href="#">{{ i18n "toTop" }}</a></p>
+
+<p>
+{{ if isset .Site.Params "email" }}
+  <a href="mailto:{{ .Site.Params.email }}">{{ i18n "emailText" }}</a>
+  &nbsp;
+{{ end }}
+{{ $url := "" }}
+{{ with .OutputFormats.Get "rss" -}}
+    {{ if not (eq .Permalink "") }}
+      <a href="{{ .Permalink | safeURL }}">{{ i18n "rssText" }}</a>
+    {{ end }}
+{{ end -}}
+{{ range .Site.Params.socials }}
+  <a href="{{ .url | safeURL }}">{{ .text }}</a>
+{{ end }}
+</p>
