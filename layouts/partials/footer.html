@@ -15,18 +15,27 @@
   <p><a href="#">{{ i18n "toTop" }}</a></p>
 </nav>
 
-<p>
-{{ if isset .Site.Params "email" }}
-  <a href="mailto:{{ .Site.Params.email }}">{{ i18n "emailText" }}</a>
-  &nbsp;
-{{ end }}
-{{ $url := "" }}
-{{ with .OutputFormats.Get "rss" -}}
-    {{ if not (eq .Permalink "") }}
-      <a href="{{ .Permalink | safeURL }}">{{ i18n "rssText" }}</a>
-    {{ end }}
-{{ end -}}
-{{ range .Site.Params.socials }}
-  <a href="{{ .url | safeURL }}">{{ .text }}</a>
-{{ end }}
-</p>
+<footer>
+  <p>
+  {{ if isset .Site.Params "email" }}
+   <a href="mailto:{{ .Site.Params.email }}">{{ i18n "emailText" }}</a>
+   &nbsp;
+  {{ end }}
+  {{ $url := "" }}
+  {{ with .OutputFormats.Get "rss" -}}
+     {{ if not (eq .Permalink "") }}
+       <a href="{{ .Permalink | safeURL }}">{{ i18n "rssText" }}</a>
+     {{ end }}
+  {{ end -}}
+  {{ range .Site.Params.socials }}
+    <a href="{{ .url | safeURL }}">{{ .text }}</a>
+  {{ end }}
+  </p>
+  <p> 
+    {{ i18n "copyright" }}
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA</a>. 
+    {{ i18n "its" }}
+    <a href="https://github.com/sirfredrick/blog.sirfredrick.com">{{ i18n "code" }}</a> 
+    {{ i18n "is" }} <a href="https://opensource.org/licenses/MIT">MIT</a>.
+  </p>
+</footer>

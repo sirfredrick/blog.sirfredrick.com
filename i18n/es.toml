@@ -10,3 +10,11 @@
   other = 'Menú de sitio'
 [menu]
   other = 'Menú'
+[copyright]
+  other = 'El contenido de este sitio web es'
+[its]
+  other = 'Su'
+[code]
+  other = 'código'
+[is]
+  other = 'es'
