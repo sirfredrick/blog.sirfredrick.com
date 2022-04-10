@@ -1,11 +1,12 @@
 {{ define "main" }}
-
-<p><img src="avatar.png" width="256" height="256" alt="Mi avatar: un cuadro rojo con un control de Super Famicom y codigo dentro"></img></p>
+<header>
+  <p><img src="avatar.png" width="256" height="256" alt="Mi avatar: un cuadro rojo con un control de Super Famicom y codigo dentro" /></p>
   <h1 class="title">{{ .Site.Title }}</h1>
   {{ .Content }}
 <footer>
   El contenido de este sitio web es <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">CC-BY-SA</a>.
   Su <a href="https://github.com/sirfredrick/blog.sirfredrick.com">código</a> es <a href="https://opensource.org/licenses/MIT">MIT</a>.
 </footer>
+</header>
 {{ end }}
 
