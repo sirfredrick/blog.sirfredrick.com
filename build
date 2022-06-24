@@ -75,6 +75,7 @@ openring \
 	-s https://drewdevault.com/feed.xml \
 	-s https://melonds.kuribo64.net/rss.php \
 	-s https://dolphin-emu.org/blog/feeds/ \
+	-s https://mikage.app/rss/ \
 	-s https://emucross.com/rss/ \
 	-s https://yuzu-emu.org/index.xml \
 	< openring-in.html \
