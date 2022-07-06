@@ -30,7 +30,7 @@ this that I feel bad about what this is going to turn into... anyway, now we hav
 the CHIP-8 game running on the NES (I'm using an emulator since I don't own an
 NES myself). 
 
-{{< video src="https://blog.sirfredrick.com/videos/emu-ception1.webm" alt="PONG gameplay everything is normal except the emulator adds 'by NovaSquirrel' at the top" width="640" >}}
+{{< video src="https://blog.sirfredrick.com/videos/emu-ception1.webm" alt="PONG gameplay everything is normal except the emulator adds 'by NovaSquirrel' at the top" width="640" embed-videojs="embed-videojs" >}}
 
 Wait! That console came out in 1985! We have over 30 years of
 untapped potential!

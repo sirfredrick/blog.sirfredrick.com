@@ -1,6 +1,23 @@
 {{ if .IsNamedParams }}
-<audio class="video-js vjs-audio" style="height: 40px;" controls loop preload="none">
-    <source src="{{ .Get "src"}}" type="audio/ogg">
-    <p> Your browser doesn't support HTML5 audio. </p>
-</audio>
+    {{ if .Get "embed-videojs" }}
+        <link rel="stylesheet" href="https://blog.sirfredrick.com/video-js.css">
+        <style>
+            .video-js {
+                display: block;
+                margin: 0 auto;
+            }
+            figcaption {
+                text-align: center;
+                margin: 1rem auto;
+            }
+        </style>
+        <script>
+            window.HELP_IMPROVE_VIDEOJS = false;
+        </script>
+        <script src="https://blog.sirfredrick.com/video.js"></script>
+    {{ end }}
+    <audio class="video-js vjs-audio" style="height: 40px;" controls loop preload="none">
+        <source src="{{ .Get "src"}}" type="audio/ogg">
+        <p> Your browser doesn't support HTML5 audio. </p>
+    </audio>
 {{ end }}
