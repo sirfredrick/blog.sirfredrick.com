@@ -1,0 +1,6 @@
+{{ if .IsNamedParams }}
+<audio class="video-js vjs-audio" style="height: 40px;" controls loop preload="none">
+    <source src="{{ .Get "src"}}" type="audio/ogg">
+    <p> Your browser doesn't support HTML5 audio. </p>
+</audio>
+{{ end }}
