@@ -10,6 +10,11 @@
  * <https://github.com/mozilla/vtt.js/blob/main/LICENSE>
  */
 
+/**
+ * Modifications by Sirfredrick
+ * Removed lines 9682-9736 since they were still accessing the cdn
+ */
+
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -9674,60 +9679,61 @@
     ;
 
     _proto.addWebVttScript_ = function addWebVttScript_() {
-      var _this5 = this;
-
-      if (window.WebVTT) {
-        return;
-      } // Initially, Tech.el_ is a child of a dummy-div wait until the Component system
-      // signals that the Tech is ready at which point Tech.el_ is part of the DOM
-      // before inserting the WebVTT script
-
-
-      if (document.body.contains(this.el())) {
-        // load via require if available and vtt.js script location was not passed in
-        // as an option. novtt builds will turn the above require call into an empty object
-        // which will cause this if check to always fail.
-        if (!this.options_['vtt.js'] && isPlain(vtt) && Object.keys(vtt).length > 0) {
-          this.trigger('vttjsloaded');
-          return;
-        } // load vtt.js via the script location option or the cdn of no location was
-        // passed in
-
-
-        var script = document.createElement('script');
-        script.src = this.options_['vtt.js'] || 'https://vjs.zencdn.net/vttjs/0.14.1/vtt.min.js';
-
-        script.onload = function () {
-          /**
-           * Fired when vtt.js is loaded.
-           *
-           * @event Tech#vttjsloaded
-           * @type {EventTarget~Event}
-           */
-          _this5.trigger('vttjsloaded');
-        };
-
-        script.onerror = function () {
-          /**
-           * Fired when vtt.js was not loaded due to an error
-           *
-           * @event Tech#vttjsloaded
-           * @type {EventTarget~Event}
-           */
-          _this5.trigger('vttjserror');
-        };
-
-        this.on('dispose', function () {
-          script.onload = null;
-          script.onerror = null;
-        }); // but have not loaded yet and we set it to true before the inject so that
-        // we don't overwrite the injected window.WebVTT if it loads right away
-
-        window.WebVTT = true;
-        this.el().parentNode.appendChild(script);
-      } else {
-        this.ready(this.addWebVttScript_);
-      }
+//     REMOVED
+//     var _this5 = this;
+//
+//     if (window.WebVTT) {
+//       return;
+//     } // Initially, Tech.el_ is a child of a dummy-div wait until the Component system
+//     // signals that the Tech is ready at which point Tech.el_ is part of the DOM
+//     // before inserting the WebVTT script
+//
+//
+//     if (document.body.contains(this.el())) {
+//       // load via require if available and vtt.js script location was not passed in
+//       // as an option. novtt builds will turn the above require call into an empty object
+//       // which will cause this if check to always fail.
+//       if (!this.options_['vtt.js'] && isPlain(vtt) && Object.keys(vtt).length > 0) {
+//         this.trigger('vttjsloaded');
+//         return;
+//       } // load vtt.js via the script location option or the cdn of no location was
+//       // passed in
+//
+//
+//       var script = document.createElement('script');
+//       script.src = this.options_['vtt.js'] || 'https://vjs.zencdn.net/vttjs/0.14.1/vtt.min.js';
+//
+//       script.onload = function () {
+//         /**
+//          * Fired when vtt.js is loaded.
+//          *
+//          * @event Tech#vttjsloaded
+//          * @type {EventTarget~Event}
+//          */
+//         _this5.trigger('vttjsloaded');
+//       };
+//
+//       script.onerror = function () {
+//         /**
+//          * Fired when vtt.js was not loaded due to an error
+//          *
+//          * @event Tech#vttjsloaded
+//          * @type {EventTarget~Event}
+//          */
+//         _this5.trigger('vttjserror');
+//       };
+//
+//       this.on('dispose', function () {
+//         script.onload = null;
+//         script.onerror = null;
+//       }); // but have not loaded yet and we set it to true before the inject so that
+//       // we don't overwrite the injected window.WebVTT if it loads right away
+//
+//       window.WebVTT = true;
+//       this.el().parentNode.appendChild(script);
+//     } else {
+//       this.ready(this.addWebVttScript_);
+//     }
     }
     /**
      * Emulate texttracks
