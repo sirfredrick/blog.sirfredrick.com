@@ -30,17 +30,23 @@ then
 	return 1
 fi
 
-sflag=
-while getopts s opt
+if [ ! $(command -v minify) ];
+then
+	printf "Error: minify not found in path\n"
+	return 1
+fi
+
+oflag=
+while getopts o opt
 do
 	case $opt in
-		s) sflag=1
+		o) oflag=1
 			;;
 	esac
 done
 
-# skip image compression
-if [ -z "$sflag" ];
+# image compression enabled
+if [ -n "$oflag" ];
 then	
 	# https://www.lcdf.org/gifsicle/
 	
