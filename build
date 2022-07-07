@@ -45,9 +45,13 @@ do
 	esac
 done
 
+printf "Preparing assets...\n"
+
 # image compression enabled
 if [ -n "$oflag" ];
 then	
+	printf "\nOptimizing images...\n"
+
 	# https://www.lcdf.org/gifsicle/
 	
 	gifsicle -i static/*.gif --optimize=3 -o static/*.gif 
@@ -72,8 +76,15 @@ then
 	ect -6 static/posts/*/*.png
 	ect -6 static/es/*.png
 	ect -6 static/es/entradas/*/*.png
-
 fi
+
+printf "\nMinifying JavaScript...\n"
+
+# https://github.com/tdewolff/minify
+
+minify -o public/video.core.novtt.min.js static/video.core.novtt.js
+
+printf "video.core.novtt.js minified to video.core.novtt.min.js\n\n"
 
 # https://git.sr.ht/~sircmpwn/openring
 
@@ -86,6 +97,8 @@ openring \
 	-s https://yuzu-emu.org/index.xml \
 	< openring-in.html \
 	> ./layouts/partials/openring.html
+
+printf "\n"
 
 # https://gohugo.io
 
