@@ -30,12 +30,6 @@ then
 	return 1
 fi
 
-if [ ! $(command -v minify) ];
-then
-	printf "Error: minify not found in path\n"
-	return 1
-fi
-
 oflag=
 while getopts o opt
 do
@@ -69,22 +63,14 @@ then
 	jpegoptim -m 90 static/es/*.jpeg
 	jpegoptim -m 90 static/entradas/*/*.jpg
 	jpegoptim -m 90 static/entradas/*/*.jpeg
-	
+
 	# https://github.com/fhanau/Efficient-Compression-Tool
-	
+
 	ect -6 static/*.png
 	ect -6 static/posts/*/*.png
 	ect -6 static/es/*.png
 	ect -6 static/es/entradas/*/*.png
 fi
-
-printf "\nMinifying JavaScript...\n"
-
-# https://github.com/tdewolff/minify
-
-minify -o public/video.core.novtt.min.js static/video.core.novtt.js
-
-printf "video.core.novtt.js minified to video.core.novtt.min.js\n\n"
 
 # https://git.sr.ht/~sircmpwn/openring
 

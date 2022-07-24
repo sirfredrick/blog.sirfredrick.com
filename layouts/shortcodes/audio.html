@@ -1,26 +1,16 @@
 {{ if .IsNamedParams }}
-    {{ if .Get "embed-videojs" }}
-        <link rel="stylesheet" href="https://blog.sirfredrick.com/video-js.css">
-        <style>
-            .video-js {
-                display: block;
-                margin: 0 auto;
-            }
-            figcaption {
-                text-align: center;
-                margin: 1rem auto;
-            }
-        </style>
-        <script>
-            window.HELP_IMPROVE_VIDEOJS = false;
-        </script>
-        <script src="https://blog.sirfredrick.com/video.core.novtt.min.js"></script>
-    {{ end }}
+    <style>
+        .center {
+            display: block;
+            margin: 0 auto;
+            width: {{ .Get "width" }}px;
+        }
+    </style>
     <figure>
         <figcaption style="text-align: center;"> {{ .Get "caption" }} </figcaption>
-        <audio class="video-js vjs-audio" controls loop preload="none" data-setup='{"audioOnlyMode": true}' {{ if ne (.Get "width") "" }} width="{{ .Get "width" }}" {{ end }}>
+        <audio class="center" controls loop preload="none">
             <source src="{{ .Get "src"}}" type="audio/webm">
-            <p> Your browser doesn't support HTML5 audio. </p>
+            <p> Your browser doesn't support HTML5 audio. Here is the <a href="{{ .Get "src" }}">download</a>.</p>
         </audio>
         {{ if ne (.Get "license") "" }}
             <p style="text-align: center;"> Audio license: <a href="{{.Get "license-link" }}">{{ .Get "license" }}</a></p>
