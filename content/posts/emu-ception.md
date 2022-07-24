@@ -28,7 +28,7 @@ Luckily, that work has already been done for us by the [NES-CHIP-8](https://gith
 graciously made open source by [NovaSquirrel](https://github.com/NovaSquirrel). I'm running a modified version of the NES-CHIP-8 project which can be found [here](https://github.com/sirfredrick/NES-CHIP-8). She did such a great job making
 this that I feel bad about what this is going to turn into... anyway, now we have
 the CHIP-8 game running on the NES (I'm using an emulator since I don't own an
-NES myself). 
+NES myself).
 
 {{< video src="https://blog.sirfredrick.com/videos/emu-ception1.webm" alt="PONG gameplay everything is normal except the emulator adds 'by NovaSquirrel' at the top" width="640" embed-videojs="embed-videojs" >}}
 
