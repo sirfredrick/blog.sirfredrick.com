@@ -1,26 +1,26 @@
 {{ if .IsNamedParams }}
-{{ if .Get "embed-videojs" }}
-    <link rel="stylesheet" href="https://blog.sirfredrick.com/video-js.css">
-    <style>
-    .video-js {
-        display: block;
-        margin: 0 auto;
-    }
-    figcaption {
-        text-align: center;
-        margin: 1rem auto;
-    }
-    </style>
-    <script>
-        window.HELP_IMPROVE_VIDEOJS = false;
-    </script>
-    <script src="https://blog.sirfredrick.com/video.core.novtt.min.js"></script>
-{{ end }}
-<figure>
-    <video class="video-js" controls preload="auto" data-setup="{}" {{ if not (eq (.Get "width") "")}}width="{{ .Get "width" }}"{{ end }}>
-        <source src="{{ .Get "src" }}" alt="" type="video/webm">
-        <p>Your browser does not support HTML5 video.</p>
-    </video>
-    <figcaption style="text-align: center;"> {{ .Get "alt" }} </figcaption>
-</figure>
+    {{ if .Get "embed-videojs" }}
+        <link rel="stylesheet" href="https://blog.sirfredrick.com/video-js.css">
+        <style>
+            .video-js {
+                display: block;
+                margin: 0 auto;
+            }
+            figcaption {
+                text-align: center;
+                margin: 1rem auto;
+            }
+        </style>
+        <script>
+            window.HELP_IMPROVE_VIDEOJS = false;
+        </script>
+        <script src="https://blog.sirfredrick.com/video.core.novtt.min.js"></script>
+    {{ end }}
+    <figure>
+        <video class="video-js" controls preload="auto" data-setup="{}" {{ if ne (.Get "width") "" }} width="{{ .Get "width" }}" {{ end }}>
+            <source src="{{ .Get "src" }}" alt="" type="video/webm">
+            <p>Your browser does not support HTML5 video.</p>
+        </video>
+        <figcaption style="text-align: center;"> {{ .Get "alt" }} </figcaption>
+    </figure>
 {{ end }}

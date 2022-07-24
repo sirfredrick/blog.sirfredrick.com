@@ -47,16 +47,12 @@ the GameBoy's portable hardware but we've now got a console from... 2001? No,
 that can't be right... that's a whole 11 years ago!
 
 Luckily, we have a solution! From the code of the popular VisualBoy Advance
-emulator comes VBA GX a GameBoy Advance emulator for the GameCube/Wii. Since, I
+emulator comes [VBA GX](https://wiibrew.org/wiki/Visual_Boy_Advance_GX) a GameBoy Advance emulator for the GameCube/Wii. Since, I
 don't have a Wii handy I'll be using the Dolphin emulator!!!!
 
 This particular emulator has a Wiimote controlled menu. Make sure to turn on the DSP LLE Recompiler so you can hear the music!
 
-<p style="text-align: center;"> <a href="https://wiibrew.org/wiki/Visual_Boy_Advance_GX"> VBA GX </a> audio </p>
-
-{{< audio src="https://blog.sirfredrick.com/audio/vbagx-music.ogg" >}}
-
-<p style="text-align: center;"> Presumed audio license: <a href="https://github.com/dborth/vbagx#readme"> GPL License </a></p>
+{{< audio src="https://blog.sirfredrick.com/audio/vbagx-music.webm" caption="VBA GX audio" license="GPL License" license-link="https://github.com/dborth/vbagx#readme" width="300">}}
 
 {{< video src="https://blog.sirfredrick.com/videos/emu-ception3.webm" alt="All of the above issues plus the game goes below 10 FPS when a point is earned" width="640" >}}
 

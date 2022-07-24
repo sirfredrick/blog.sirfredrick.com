@@ -16,8 +16,14 @@
         </script>
         <script src="https://blog.sirfredrick.com/video.core.novtt.min.js"></script>
     {{ end }}
-    <audio class="video-js vjs-audio" style="height: 40px;" controls loop preload="none">
-        <source src="{{ .Get "src"}}" type="audio/ogg">
-        <p> Your browser doesn't support HTML5 audio. </p>
-    </audio>
+    <figure>
+        <figcaption style="text-align: center;"> {{ .Get "caption" }} </figcaption>
+        <audio class="video-js vjs-audio" controls loop preload="none" data-setup='{"audioOnlyMode": true}' {{ if ne (.Get "width") "" }} width="{{ .Get "width" }}" {{ end }}>
+            <source src="{{ .Get "src"}}" type="audio/webm">
+            <p> Your browser doesn't support HTML5 audio. </p>
+        </audio>
+        {{ if ne (.Get "license") "" }}
+            <p style="text-align: center;"> Audio license: <a href="{{.Get "license-link" }}">{{ .Get "license" }}</a></p>
+        {{ end }}
+    </figure>
 {{ end }}

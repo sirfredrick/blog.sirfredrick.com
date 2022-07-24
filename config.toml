@@ -5,10 +5,6 @@ disableHugoGeneratorInject = true
 enableRobotsTXT = true
 defaultContentLanguage = 'en'
 
-[markup]
-    [markup.goldmark.renderer]
-        unsafe = true
-
 [languages]
   [languages.en]
 	title = "Sirfredrick's Blog"
