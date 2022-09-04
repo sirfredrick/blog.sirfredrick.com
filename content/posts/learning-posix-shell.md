@@ -7,14 +7,14 @@ draft: false
 Being new to the Linux (and for that matter BSD/other POSIX OS) scene I had
 never really gotten a chance to learn shell scripting. I've been using Linux
 since summer 2020 and I've quickly understood the need for POSIX shell
-scripting. 
+scripting.
 
 When I first started out using Linux I excitedly "distro-hopped" in virtual
 machines to try and find what flavor I liked best. As I result of this, I tried
 a FreeBSD virtual machine and was surprised with how much software was
 available. I also discovered that common utilities like `grep` and `sed` didn't
 have all the features of their GNU counterparts. From then on I knew I had to
-work on learning POSIX shell and to shun any bashisms. 
+work on learning POSIX shell and to shun any bashisms.
 
 ## Finding a project to work on
 
@@ -22,14 +22,15 @@ To start on this quest I needed a project to work on. I have been wanting to
 improve my Spanish via passive listening. Passive listening is when you condense
 the audio of videos you have already watched by cutting out the non-speaking
 parts. This allows you to listen to this audio again during your daily commute
-or on a walk while maximizing its learning potential. 
+or on a walk while maximizing its learning potential.
 
 There have been various projects that condense audio of videos based on their
-subtitle files. One of them [substudy](https://github.com/emk/subtitles-rs/blob/master/substudy/README.md) 
+subtitle files. One of them
+[substudy](https://github.com/emk/subtitles-rs/blob/master/substudy/README.md)
 had a bug in it that prevented the majority of YouTube subtitle files from
 working. Naturally, as the FOSS advocate that I am, I sent in a pull request to
 fix this. Sadly, it seems like the project is unmaintained. However, this
-provided me with the perfect learning opportunity. 
+provided me with the perfect learning opportunity.
 
 ## Learning POSIX shell
 
@@ -40,13 +41,13 @@ that are provided are part of the standard and as such any call to them requires
 special attention. For my particular project I learned early on that
 `[[:digit:]]` would be required to parse time stamps in `sed`. Additionally,
 `[[:digit:]]` would have to be repeated multiple times to accurately parse
-timestamps. 
+timestamps.
 
 For example see this painful snippet:
 
 ```sh
 # Delete blank lines after srt header
-sed '/^[[:digit:]][[:digit:]]:[[:digit:]][[:digit:]]:[[:digit:]][[:digit:]],[[:digit:]][[:digit:]][[:digit:]][[:space:]]-->[[:space:]][[:digit:]][[:digit:]]:[[:digit:]][[:digit:]]:[[:digit:]][[:digit:]],[[:digit:]][[:digit:]][[:digit:]]/ {n;/^$/d;}' $PACIFILE-temp.srt > $PACIFILE.srt	
+sed '/^[[:digit:]][[:digit:]]:[[:digit:]][[:digit:]]:[[:digit:]][[:digit:]],[[:digit:]][[:digit:]][[:digit:]][[:space:]]-->[[:space:]][[:digit:]][[:digit:]]:[[:digit:]][[:digit:]]:[[:digit:]][[:digit:]],[[:digit:]][[:digit:]][[:digit:]]/ {n;/^$/d;}' $PACIFILE-temp.srt > $PACIFILE.srt
 rm ./$PACIFILE-temp.srt
 ```
 
@@ -68,10 +69,10 @@ dependency on `youtube-dl`!
 p="00:00:00"
 q="00:00:00"
 while IFS=' ' read -r f s t
-do 
-  echo "$s:$t:$p:$q" > temp.txt	
+do
+  echo "$s:$t:$p:$q" > temp.txt
   while IFS=':' read -r a b c x y z i j k l m n
-  do	
+  do
 ...
 ```
 > When you see this run!
