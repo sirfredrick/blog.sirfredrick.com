@@ -5,6 +5,9 @@ date: 2022-07-05T18:23:10-07:00
 draft: false
 ---
 
+<!-- Copyright (c) 2022 Jeffrey Tucker //-->
+<!-- SPDX-License-Identifier: CC-BY-SA-4.0 //-->
+
 **Siezure Warning**: This article contains video of the CHIP-8 version of PONG
 that may cause siezures. The videos in this article will not autoplay and
 sufficient information will be given in a caption under the video.

@@ -1,3 +1,6 @@
+# Copyright (c) 2022 Jeffrey Tucker
+# SPDX-License-Identifier: MIT
+
 baseURL = 'https://blog.sirfredrick.com/'
 languageCode = 'en-us'
 title = "Sirfredrick's Blog"
@@ -36,7 +39,7 @@ defaultContentLanguage = 'en'
 [params]
     author = "Sirfredrick"
     rssText = "RSS feed"
-    
+
     [[params.socials]]
       url = "https://elekk.xyz/@sirfredrick"
       text = "Mastodon"

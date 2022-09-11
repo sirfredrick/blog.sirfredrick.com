@@ -4,6 +4,9 @@ date: 2020-03-20T00:00:00-07:00
 draft: false
 ---
 
+<!-- Copyright (c) 2020 Jeffrey Tucker //-->
+<!--SPDX-License-Identifier: CC-BY-SA-4.0 //-->
+
 ![](/es/entradas/mi-navegador-de-internet-favorito/vivaldi_logo.png)
 
 El logo de Vivaldi de [Vivaldi.com](https://vivaldi.com)

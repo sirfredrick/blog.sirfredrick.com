@@ -4,6 +4,9 @@ date: 2022-04-03T18:45:10-07:00
 draft: false
 ---
 
+<!-- Copyright (c) 2022 Jeffrey Tucker //-->
+<!-- SPDX-License-Identifier: CC-BY-SA-4.0 //-->
+
 Being new to the Linux (and for that matter BSD/other POSIX OS) scene I had
 never really gotten a chance to learn shell scripting. I've been using Linux
 since summer 2020 and I've quickly understood the need for POSIX shell

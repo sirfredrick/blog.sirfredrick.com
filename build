@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Copyright (c) 2022 Jeffrey Tucker
+# SPDX-License-Identifier: MIT
+
 if [ ! $(command -v hugo) ];
 then
 	printf "Error: hugo not found in path\n"

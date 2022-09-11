@@ -4,6 +4,9 @@ date: 2018-10-26T00:00:00-07:00
 draft: false
 ---
 
+<!-- Copyright (c) 2018 Jeffrey Tucker //-->
+<!-- SPDX-License-Identifier: CC-BY-SA-4.0 //-->
+
 ![RGB Keyboard](/posts/vivaldi-color-changer-service/keyboard.jpg)
 
 Photo by
