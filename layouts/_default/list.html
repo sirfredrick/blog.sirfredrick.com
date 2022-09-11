@@ -5,7 +5,7 @@
 <h1>{{ .Title }}</h1>
 
 {{ range .Pages.ByPublishDate.Reverse }}
-  <article> 
+  <article>
     <h2>
       <a href="{{ .RelPermalink }}">{{ .Title }} </a>
       <time datetime="{{ .PublishDate.Format "2006-01-02" }}">({{ .PublishDate.Format "2 Jan 2006" }})</time>
